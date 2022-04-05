@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    stages {
+    stages{
         stage('build Sin Test') {
             steps{
                 sh 'npm install'
