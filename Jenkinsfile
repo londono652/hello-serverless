@@ -16,10 +16,9 @@ pipeline{
                 }
             }
         }
-        stage('analisis codigo estatico') {
-            steps {
-                    sh 'echo "análisis código estatico"'
-                }
+        stage('analisis estatico') {
+            steps{
+                sh 'echo analisis estatico'
             }
         }
         stage('deploy') {
