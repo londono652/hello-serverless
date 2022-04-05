@@ -4,6 +4,8 @@ pipeline{
         stage('build') {
             steps{
                 sh 'npm install'
+                sh 'npm rebuild'
+                sh 'npm run build --skip-test --if-present'
             }
         }
         stage('deploy') {
