@@ -1,5 +1,6 @@
 pipeline{
     agent any
+    tools {nodejs "nodejs"}
     stages {
         stage('build Sin Test') {
             steps{
@@ -13,6 +14,12 @@ pipeline{
                 nodejs(nodeJSInstallationName: 'nodejs') {
                     sh 'npm run test:coverage && cp coverage/lcov.info lcov.info || echo "Code coverage failed" '
                 archiveArtifacts(artifacts: 'coverage/**', onlyIfSuccessful: true)
+                }
+            }
+        }
+        stage('analisis codigo estatico') {
+            steps {
+                    sh 'echo "análisis código estatico"'
                 }
             }
         }
